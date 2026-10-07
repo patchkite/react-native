@@ -20,7 +20,8 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - name: Check tag matches package version
-        run: test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
+        run: |
+          test "v$(node -p "require('./package.json').version")" = "$GITHUB_REF_NAME"
       - run: npm publish --provenance --access public
       - uses: softprops/action-gh-release@v3
         with:
