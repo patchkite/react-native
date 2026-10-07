@@ -1,0 +1,58 @@
+def safeExtGet(prop, fallback) {
+  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+apply plugin: "com.android.library"
+apply plugin: "kotlin-android"
+apply plugin: "com.facebook.react"
+
+android {
+  namespace "io.github.patchkite.reactnative"
+  compileSdkVersion safeExtGet("compileSdkVersion", 36)
+
+  defaultConfig {
+    minSdkVersion safeExtGet("minSdkVersion", 24)
+    targetSdkVersion safeExtGet("targetSdkVersion", 36)
+  }
+
+  buildFeatures {
+    buildConfig false
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  sourceSets {
+    main {
+      java.srcDirs += ["build/generated/source/codegen/java"]
+    }
+  }
+
+  testOptions {
+    unitTests.all {
+      // Shared fixtures (sdks/test-fixtures) whose values are computed by @patchkite/shared.
+      // canonicalFile: the module is usually linked via node_modules (symlink).
+      systemProperty "patchkite.fixtures", new File(projectDir.canonicalFile, "../test/fixtures").canonicalPath
+    }
+  }
+}
+
+repositories {
+  mavenCentral()
+  google()
+}
+
+dependencies {
+  implementation "com.facebook.react:react-android"
+
+  testImplementation "junit:junit:4.13.2"
+  testImplementation "org.robolectric:robolectric:4.17"
+}
+
+react {
+  jsRootDir = file("../src/")
+  libraryName = "RNPatchkiteSpec"
+  codegenJavaPackageName = "io.github.patchkite.reactnative"
+}

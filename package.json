@@ -1,0 +1,69 @@
+{
+  "name": "@patchkite/react-native",
+  "version": "1.0.0",
+  "description": "Patchkite \u2014 OTA updates for React Native",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "react-native": "src/index.ts",
+  "source": "src/index.ts",
+  "files": [
+    "src",
+    "android",
+    "ios",
+    "*.podspec",
+    "!android/build",
+    "!ios/build",
+    "!android/src/test",
+    "!ios-tests",
+    "!test"
+  ],
+  "keywords": [
+    "react-native",
+    "ota",
+    "code-push",
+    "hot-update",
+    "patchkite"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.80.0"
+  },
+  "codegenConfig": {
+    "name": "RNPatchkiteSpec",
+    "type": "modules",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "io.github.patchkite.reactnative"
+    },
+    "ios": {
+      "modulesProvider": {
+        "Patchkite": "RCTPatchkite"
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patchkite/react-native.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "homepage": "https://patchkite.github.io/docs/guides/react-native/",
+  "bugs": {
+    "url": "https://github.com/patchkite/react-native/issues"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck",
+    "fixtures": "scripts/update-fixtures.sh"
+  },
+  "devDependencies": {
+    "@react-native/typescript-config": "0.87.1",
+    "@types/react": "^19.2.0",
+    "react": "19.2.3",
+    "react-native": "0.87.1",
+    "typescript": "^6.0.3"
+  }
+}
