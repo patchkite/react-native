@@ -8,6 +8,10 @@ updates:
     directory: /example
     schedule:
       interval: monthly
+    ignore:
+      # @react-native/babel-preset and @babel/core are on Babel 7; Babel 8 has to be adopted as a whole.
+      - dependency-name: "@babel/*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
