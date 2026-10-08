@@ -12,6 +12,9 @@ updates:
       # @react-native/babel-preset and @babel/core are on Babel 7; Babel 8 has to be adopted as a whole.
       - dependency-name: "@babel/*"
         update-types: ["version-update:semver-major"]
+      # @react-native/eslint-config peers on ESLint 8; ESLint 10 fails npm ci with ERESOLVE.
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
