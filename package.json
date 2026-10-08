@@ -1,6 +1,6 @@
 {
   "name": "@patchkite/react-native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Patchkite \u2014 OTA updates for React Native",
   "main": "src/index.ts",
   "types": "src/index.ts",

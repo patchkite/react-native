@@ -2,6 +2,12 @@
 
 All notable changes to `@patchkite/react-native` are documented here. This project follows [Semantic Versioning](https://semver.org/).
 
+## 1.0.1
+
+No changes to the library itself.
+
+- First release published from GitHub Actions with npm trusted publishing and provenance.
+
 ## 1.0.0
 
 First public release.
