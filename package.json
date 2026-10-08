@@ -50,7 +50,7 @@
     "access": "public",
     "provenance": true
   },
-  "homepage": "https://patchkite.github.io/docs/guides/react-native/",
+  "homepage": "https://docs.patchkite.com/guides/react-native/",
   "bugs": {
     "url": "https://github.com/patchkite/react-native/issues"
   },

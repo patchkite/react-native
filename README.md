@@ -68,7 +68,7 @@ Release updates with the [Patchkite CLI](https://github.com/patchkite/cli):
 patchkite release-react MyApp-Android android
 ```
 
-The [React Native guide](https://patchkite.github.io/docs/guides/react-native/) covers deployment keys per build, code signing, manual control, and verification. See the [API reference](https://patchkite.github.io/docs/reference/react-native-api/) for every function and option.
+The [React Native guide](https://docs.patchkite.com/guides/react-native/) covers deployment keys per build, code signing, manual control, and verification. See the [API reference](https://docs.patchkite.com/reference/react-native-api/) for every function and option.
 
 ## Development
 
